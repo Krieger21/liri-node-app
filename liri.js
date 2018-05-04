@@ -90,6 +90,8 @@ function spotified (input) {
         }
         console.log(data)
         
+        // How I would have logged out the data if I could have gotten this to work
+
         // console.log("\nArtist: " + data.tracks.items[0].artists[0].name +
         //             "\nThe song's name: " + data.tracks.items[0].name +
         //             "\nPreview on spotify: " + data.tracks.items[0].external_urls.spotify +
