@@ -7,8 +7,8 @@ var Spotify = require('node-spotify-api')
 var fs = require('fs')
 
 var spotify = new Spotify(imports.spotify);
+console.log(spotify)
 var client = new Twitter(imports.twitter);
-
 inquirer.prompt([
     {
         type: "list",
@@ -61,9 +61,9 @@ inquirer.prompt([
              omdb(input)  
             }
             else {
-                var input = inquirer.movie
+                // var input = inquirer.movie
                 console.log("MOVIE INFO: \n")
-                omdb(input)
+                omdb(inquirer.movie)
             }
         })
     }
@@ -88,14 +88,14 @@ function spotified (input) {
         if (err) {
             return console.log('Error occurred: ' + err);
         }
-        console.log(data)
+        // console.log(data.tracks.items[0].artists)
         
         // How I would have logged out the data if I could have gotten this to work
 
-        // console.log("\nArtist: " + data.tracks.items[0].artists[0].name +
-        //             "\nThe song's name: " + data.tracks.items[0].name +
-        //             "\nPreview on spotify: " + data.tracks.items[0].external_urls.spotify +
-        //             "\nAlbum name: " + data.tracks.items[0].album.name + "\n");
+        console.log("\nArtist: " + data.tracks.items[0].artists[0].name +
+                    "\nThe song's name: " + data.tracks.items[0].name +
+                    "\nPreview on spotify: " + data.tracks.items[0].external_urls.spotify +
+                    "\nAlbum name: " + data.tracks.items[0].album.name + "\n");
         
     });
 }
